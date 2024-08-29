@@ -73,13 +73,22 @@ class SetupPaymentSheetParameters with _$SetupPaymentSheetParameters {
     /// When no appearance defined it will fallback to [style] or Stripe default.
     PaymentSheetAppearance? appearance,
 
+    /// Default shipping information of the customer.
+    ///
+    ///
+    /// The shipping information for the customer. If set, PaymentSheet will pre-populate the form fields with the values provided.
+    /// This is used to display a "Billing address is same as shipping" checkbox if `defaultBillingDetails` is not provided.
+    /// If `name` and `line1` are populated, it's also [attached to the PaymentIntent](https://stripe.com/docs/api/payment_intents/object#payment_intent_object-shipping) during payment.
+    ///
+    @JsonKey(name: 'defaultBillingDetails') BillingDetails? billingDetails,
+
     /// Default billing information of the customer.
     ///
     /// Use this field to already prefill the customers billingDetails in the payment sheet.
     /// For example when you supply a country the country will be set on the payment sheet +
     /// alternative localization options. This does not set the billingDetails on the
     /// paymentIntent since the customer can change those.
-    @JsonKey(name: 'defaultBillingDetails') BillingDetails? billingDetails,
+    @JsonKey(name: 'defaultShippingDetails') AddressDetails? shippingDetails,
 
     ///This is an experimental feature that may be removed at any time.
     /// Defaults to true. If true, the customer can delete all saved payment methods.

@@ -39,6 +39,10 @@ _$SetupParametersImpl _$$SetupParametersImplFromJson(
           ? null
           : BillingDetails.fromJson(
               json['defaultBillingDetails'] as Map<String, dynamic>),
+      shippingDetails: json['defaultShippingDetails'] == null
+          ? null
+          : AddressDetails.fromJson(
+              json['defaultShippingDetails'] as Map<String, dynamic>),
       allowsRemovalOfLastSavedPaymentMethod:
           json['allowsRemovalOfLastSavedPaymentMethod'] as bool?,
       paymentMethodOrder: (json['paymentMethodOrder'] as List<dynamic>?)
@@ -75,6 +79,7 @@ Map<String, dynamic> _$$SetupParametersImplToJson(
       'allowsDelayedPaymentMethods': instance.allowsDelayedPaymentMethods,
       'appearance': instance.appearance?.toJson(),
       'defaultBillingDetails': instance.billingDetails?.toJson(),
+      'defaultShippingDetails': instance.shippingDetails?.toJson(),
       'allowsRemovalOfLastSavedPaymentMethod':
           instance.allowsRemovalOfLastSavedPaymentMethod,
       'paymentMethodOrder': instance.paymentMethodOrder,

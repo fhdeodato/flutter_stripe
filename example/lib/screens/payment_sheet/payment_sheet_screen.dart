@@ -71,7 +71,7 @@ class _PaymentSheetScreenState extends State<PaymentSheetScreen> {
 
       // create some billingdetails
       final billingDetails = BillingDetails(
-        name: 'Flutter Stripe',
+        name: 'Flutter Stripe Billing',
         email: 'email@stripe.com',
         phone: '+48888000888',
         address: Address(
@@ -84,6 +84,17 @@ class _PaymentSheetScreenState extends State<PaymentSheetScreen> {
         ),
       ); // mocked data for tests
 
+      final shippingDetails = AddressDetails(
+        name: 'Flutter Stripe Shipping ',
+        address: Address(
+          city: 'Houston',
+          country: 'US',
+          line1: '1459  Circle Drive',
+          line2: '',
+          state: 'Texas',
+          postalCode: '77063',
+        ),
+      ); 
       // 2. initialize the payment sheet
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
@@ -128,6 +139,7 @@ class _PaymentSheetScreenState extends State<PaymentSheetScreen> {
             ),
           ),
           billingDetails: billingDetails,
+          shippingDetails: shippingDetails,
         ),
       );
       setState(() {
