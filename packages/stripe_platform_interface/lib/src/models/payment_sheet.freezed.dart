@@ -97,7 +97,7 @@ mixin _$SetupPaymentSheetParameters {
   /// alternative localization options. This does not set the billingDetails on the
   /// paymentIntent since the customer can change those.
   @JsonKey(name: 'defaultShippingDetails')
-  AddressDetails? get shippingDetails => throw _privateConstructorUsedError;
+  BillingDetails? get shippingDetails => throw _privateConstructorUsedError;
 
   ///This is an experimental feature that may be removed at any time.
   /// Defaults to true. If true, the customer can delete all saved payment methods.
@@ -158,7 +158,7 @@ abstract class $SetupPaymentSheetParametersCopyWith<$Res> {
       bool allowsDelayedPaymentMethods,
       PaymentSheetAppearance? appearance,
       @JsonKey(name: 'defaultBillingDetails') BillingDetails? billingDetails,
-      @JsonKey(name: 'defaultShippingDetails') AddressDetails? shippingDetails,
+      @JsonKey(name: 'defaultShippingDetails') BillingDetails? shippingDetails,
       bool? allowsRemovalOfLastSavedPaymentMethod,
       List<String>? paymentMethodOrder,
       String? returnURL,
@@ -173,7 +173,7 @@ abstract class $SetupPaymentSheetParametersCopyWith<$Res> {
   $PaymentSheetGooglePayCopyWith<$Res>? get googlePay;
   $PaymentSheetAppearanceCopyWith<$Res>? get appearance;
   $BillingDetailsCopyWith<$Res>? get billingDetails;
-  $AddressDetailsCopyWith<$Res>? get shippingDetails;
+  $BillingDetailsCopyWith<$Res>? get shippingDetails;
   $BillingDetailsCollectionConfigurationCopyWith<$Res>?
       get billingDetailsCollectionConfiguration;
 }
@@ -274,7 +274,7 @@ class _$SetupPaymentSheetParametersCopyWithImpl<$Res,
       shippingDetails: freezed == shippingDetails
           ? _value.shippingDetails
           : shippingDetails // ignore: cast_nullable_to_non_nullable
-              as AddressDetails?,
+              as BillingDetails?,
       allowsRemovalOfLastSavedPaymentMethod: freezed ==
               allowsRemovalOfLastSavedPaymentMethod
           ? _value.allowsRemovalOfLastSavedPaymentMethod
@@ -368,12 +368,12 @@ class _$SetupPaymentSheetParametersCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $AddressDetailsCopyWith<$Res>? get shippingDetails {
+  $BillingDetailsCopyWith<$Res>? get shippingDetails {
     if (_value.shippingDetails == null) {
       return null;
     }
 
-    return $AddressDetailsCopyWith<$Res>(_value.shippingDetails!, (value) {
+    return $BillingDetailsCopyWith<$Res>(_value.shippingDetails!, (value) {
       return _then(_value.copyWith(shippingDetails: value) as $Val);
     });
   }
@@ -417,7 +417,7 @@ abstract class _$$SetupParametersImplCopyWith<$Res>
       bool allowsDelayedPaymentMethods,
       PaymentSheetAppearance? appearance,
       @JsonKey(name: 'defaultBillingDetails') BillingDetails? billingDetails,
-      @JsonKey(name: 'defaultShippingDetails') AddressDetails? shippingDetails,
+      @JsonKey(name: 'defaultShippingDetails') BillingDetails? shippingDetails,
       bool? allowsRemovalOfLastSavedPaymentMethod,
       List<String>? paymentMethodOrder,
       String? returnURL,
@@ -438,7 +438,7 @@ abstract class _$$SetupParametersImplCopyWith<$Res>
   @override
   $BillingDetailsCopyWith<$Res>? get billingDetails;
   @override
-  $AddressDetailsCopyWith<$Res>? get shippingDetails;
+  $BillingDetailsCopyWith<$Res>? get shippingDetails;
   @override
   $BillingDetailsCollectionConfigurationCopyWith<$Res>?
       get billingDetailsCollectionConfiguration;
@@ -537,7 +537,7 @@ class __$$SetupParametersImplCopyWithImpl<$Res>
       shippingDetails: freezed == shippingDetails
           ? _value.shippingDetails
           : shippingDetails // ignore: cast_nullable_to_non_nullable
-              as AddressDetails?,
+              as BillingDetails?,
       allowsRemovalOfLastSavedPaymentMethod: freezed ==
               allowsRemovalOfLastSavedPaymentMethod
           ? _value.allowsRemovalOfLastSavedPaymentMethod
@@ -694,7 +694,7 @@ class _$SetupParametersImpl implements _SetupParameters {
   /// paymentIntent since the customer can change those.
   @override
   @JsonKey(name: 'defaultShippingDetails')
-  final AddressDetails? shippingDetails;
+  final BillingDetails? shippingDetails;
 
   ///This is an experimental feature that may be removed at any time.
   /// Defaults to true. If true, the customer can delete all saved payment methods.
@@ -870,7 +870,7 @@ abstract class _SetupParameters implements SetupPaymentSheetParameters {
       @JsonKey(name: 'defaultBillingDetails')
       final BillingDetails? billingDetails,
       @JsonKey(name: 'defaultShippingDetails')
-      final AddressDetails? shippingDetails,
+      final BillingDetails? shippingDetails,
       final bool? allowsRemovalOfLastSavedPaymentMethod,
       final List<String>? paymentMethodOrder,
       final String? returnURL,
@@ -974,7 +974,7 @@ abstract class _SetupParameters implements SetupPaymentSheetParameters {
   /// alternative localization options. This does not set the billingDetails on the
   /// paymentIntent since the customer can change those.
   @JsonKey(name: 'defaultShippingDetails')
-  AddressDetails? get shippingDetails;
+  BillingDetails? get shippingDetails;
   @override
 
   ///This is an experimental feature that may be removed at any time.

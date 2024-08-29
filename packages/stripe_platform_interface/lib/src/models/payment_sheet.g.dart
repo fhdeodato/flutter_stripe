@@ -41,7 +41,7 @@ _$SetupParametersImpl _$$SetupParametersImplFromJson(
               json['defaultBillingDetails'] as Map<String, dynamic>),
       shippingDetails: json['defaultShippingDetails'] == null
           ? null
-          : AddressDetails.fromJson(
+          : BillingDetails.fromJson(
               json['defaultShippingDetails'] as Map<String, dynamic>),
       allowsRemovalOfLastSavedPaymentMethod:
           json['allowsRemovalOfLastSavedPaymentMethod'] as bool?,

@@ -84,8 +84,10 @@ class _PaymentSheetScreenState extends State<PaymentSheetScreen> {
         ),
       ); // mocked data for tests
 
-      final shippingDetails = AddressDetails(
+      final shippingDetails = BillingDetails(
         name: 'Flutter Stripe Shipping ',
+        email: 'email@stripe.com',
+        phone: '+48888000888',
         address: Address(
           city: 'Houston',
           country: 'US',

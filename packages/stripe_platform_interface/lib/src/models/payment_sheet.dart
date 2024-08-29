@@ -88,7 +88,7 @@ class SetupPaymentSheetParameters with _$SetupPaymentSheetParameters {
     /// For example when you supply a country the country will be set on the payment sheet +
     /// alternative localization options. This does not set the billingDetails on the
     /// paymentIntent since the customer can change those.
-    @JsonKey(name: 'defaultShippingDetails') AddressDetails? shippingDetails,
+    @JsonKey(name: 'defaultShippingDetails') BillingDetails? shippingDetails,
 
     ///This is an experimental feature that may be removed at any time.
     /// Defaults to true. If true, the customer can delete all saved payment methods.
