@@ -58,7 +58,7 @@ class PaymentMethodCreateParamsFactory(
 
   @Throws(PaymentMethodCreateParamsException::class)
   private fun createAlipayParams(): PaymentMethodCreateParams {
-    return PaymentMethodCreateParams.createAlipay()
+    return PaymentMethodCreateParams.createAlipay(billingDetails = billingDetailsParams)
   }
 
   @Throws(PaymentMethodCreateParamsException::class)

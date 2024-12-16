@@ -1,1 +1,3 @@
 rootProject.name = 'stripe_android'
+include ':stripe-android'
+project(':stripe-android').projectDir = new File('../../../stripe-android/')

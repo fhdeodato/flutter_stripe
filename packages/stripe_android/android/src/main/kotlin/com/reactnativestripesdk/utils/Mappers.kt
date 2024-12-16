@@ -390,7 +390,7 @@ internal fun mapFromPaymentMethod(paymentMethod: PaymentMethod): WritableMap {
     it.putString("accountHolderType", mapFromUSBankAccountHolderType(paymentMethod.usBankAccount?.accountHolderType))
     it.putString("last4", paymentMethod.usBankAccount?.last4)
     it.putString("bankName", paymentMethod.usBankAccount?.bankName)
-    it.putString("linkedAccount", paymentMethod.usBankAccount?.linkedAccount)
+    it.putString("linkedAccount", paymentMethod.usBankAccount?.financialConnectionsAccount)
     it.putString("fingerprint", paymentMethod.usBankAccount?.fingerprint)
     it.putString("preferredNetworks", paymentMethod.usBankAccount?.networks?.preferred)
     it.putArray("supportedNetworks", paymentMethod.usBankAccount?.networks?.supported as? ReadableArray)
@@ -607,6 +607,9 @@ internal fun mapToShippingDetails(shippingDetails: ReadableMap?): ConfirmPayment
 
   return ConfirmPaymentIntentParams.Shipping(
     name = getValOr(shippingDetails, "name") ?: "",
+    phone = getValOr(shippingDetails, "phone") ?: "",
+    trackingNumber = getValOr(shippingDetails, "trackingNumber") ?: "",
+    carrier = getValOr(shippingDetails, "carrier") ?: "",
     address = address
   )
 }
