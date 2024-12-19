@@ -24,7 +24,8 @@ dependencies:
   meta: ^1.8.0
   stripe_android:
     path: ../stripe_android
-  stripe_ios: ^11.3.0
+  stripe_ios: #^11.3.0
+    path: ../stripe_ios
   stripe_platform_interface: ^11.3.0
 dev_dependencies:
   flutter_test:
